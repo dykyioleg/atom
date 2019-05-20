@@ -22,7 +22,12 @@ public final class Geometry {
      * @return new Bar
      */
     public static Collider createBar(int firstCornerX, int firstCornerY, int secondCornerX, int secondCornerY) {
-        throw new UnsupportedOperationException();
+        Bar bar = new Bar();
+        bar.setFirstCornerX(firstCornerX);
+        bar.setFirstCornerY(firstCornerY);
+        bar.setSecondCornerX(secondCornerX);
+        bar.setSecondCornerY(secondCornerY);
+        return bar;
     }
 
     /**
