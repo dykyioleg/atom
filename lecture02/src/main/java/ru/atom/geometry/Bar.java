@@ -41,7 +41,16 @@ public class Bar  implements Collider{
 
     @Override
     public boolean isColliding(Collider other) {
-        return true;
+        Point point = getClass() != other.getClass() ? (Point) other  : null;
+        Bar bar = null;
+
+
+
+        return this.firstCornerX == bar.firstCornerX && this.secondCornerX == bar.secondCornerX
+                && this.firstCornerY == bar.firstCornerY && this.secondCornerY == bar.secondCornerY
+                || this.firstCornerY == bar.secondCornerX && this.secondCornerX == bar.secondCornerY
+                || this.firstCornerX == bar.secondCornerX && this.secondCornerY == bar.secondCornerY
+                || this.secondCornerX > point.getX() && this.secondCornerY > point.getY();
     }
 
     @Override
@@ -53,6 +62,8 @@ public class Bar  implements Collider{
 
         return this.firstCornerX == bar.firstCornerX && this.secondCornerX == bar.secondCornerX
                 && this.firstCornerY == bar.firstCornerY && this.secondCornerY == bar.secondCornerY
-                || this.firstCornerX == bar.secondCornerX && this.firstCornerY == bar.secondCornerY;
+                || this.firstCornerX == bar.secondCornerX && this.firstCornerY == bar.secondCornerY
+                || this.firstCornerY == bar.firstCornerX && this.secondCornerX == bar.firstCornerY
+                || this.secondCornerX == bar.firstCornerX && this.secondCornerY == bar.secondCornerY;
     }
 }

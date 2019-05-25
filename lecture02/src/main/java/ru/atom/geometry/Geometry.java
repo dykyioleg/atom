@@ -35,6 +35,9 @@ public final class Geometry {
      * @return new Point
      */
     public static Collider createPoint(int x, int y) {
-        throw new UnsupportedOperationException();
+        Point point = new Point();
+        point.setX(x);
+        point.setY(y);
+        return point;
     }
 }
